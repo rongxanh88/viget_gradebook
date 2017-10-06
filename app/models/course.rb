@@ -21,4 +21,5 @@ class Course < ApplicationRecord
           .where(user_id: teacher.id)
           .select("DISTINCT courses.id, courses.name, semesters.name AS semester")
   end
+
 end
