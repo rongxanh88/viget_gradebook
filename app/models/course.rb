@@ -15,4 +15,11 @@ class Course < ApplicationRecord
                         ") sem_courses ON sem_courses.course_id = courses.id"
                         ).select("courses.name, sem_courses.grade")
   end
+
+  def self.instructor_courses(teacher)
+    Course.joins(:semester_courses, :semesters)
+          .where(user_id: teacher.id)
+          .select("DISTINCT courses.id, courses.name, semesters.name AS semester")
+  end
+
 end

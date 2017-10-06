@@ -1,0 +1,14 @@
+= render partial: 'partials/dashboard/navbar'
+%section.table_container
+  %table
+    %tr
+      %td
+        Student Name
+      %td
+        Grade
+    - @students.each do |student|
+      %tr
+        %td
+          = student.full_name
+        %td
+          = student.grade
