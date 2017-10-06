@@ -1,0 +1,15 @@
+= render partial: 'partials/dashboard/navbar'
+%section.table_container
+  %table
+    %tr
+      %td
+        Course Name
+      %td
+        Semester
+    - @courses.each do |course|
+      %tr{ class: to_css_class(course) }
+        %td
+          -# = link_to course.name, teacher_course_path(course, semester: {semester: course.semester})
+          = course.name
+        %td
+          = course.semester
