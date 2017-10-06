@@ -1,0 +1,27 @@
+= render partial: 'partials/dashboard/navbar'
+%section.student_tables
+  %table
+    %tr
+      %td
+        Course Name
+      %td
+        Grade
+    - @course_grades.each do |course|
+      %tr
+        %td
+          = course.name
+        %td
+          = course.grade
+
+  %table
+    %tr
+      %td
+        Semester
+      %td
+        GPA
+    - @semester_gpa.each do |grades|
+      %tr
+        %td
+          = grades.semester
+        %td
+          = "GPA: #{grades.gpa.ceil}"

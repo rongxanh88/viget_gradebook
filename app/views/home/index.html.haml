@@ -1,0 +1,13 @@
+%h1.title Gradebook
+  
+%div.login
+  = form_for(@user, url: '/login', method: :post) do |f|
+    %p.login_field
+      = f.label :username
+      = f.text_field :username
+    %p.login_field
+      = f.label :password
+      = f.password_field :password
+    %p.login_field
+    %br
+      = f.submit "Login"
