@@ -1,0 +1,12 @@
+%ul.navbar
+  %li.navbar_item
+    = "Logged in as #{current_user.username}!"
+  %li.navbar_item
+    = "Mode: #{current_user.role}"
+  %li.navbar_item
+    - if current_user.teacher?
+      = link_to 'Home', teacher_dashboard_index_path
+    - else
+      = link_to 'Home', student_dashboard_index_path
+  %li.navbar_item
+    = link_to 'Logout', ('/login'), method: :delete
