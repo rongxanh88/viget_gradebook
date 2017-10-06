@@ -1,0 +1,31 @@
+= render partial: 'partials/dashboard/navbar'
+%section.table_container
+  %table
+    %tr
+      %td
+        Course Name
+      %td
+        Semester
+      %td
+        Course AVG Grade
+    - @course_grades.each do |course|
+      %tr
+        %td
+          = course[0].course_name
+        %td
+          = course[0].semester
+        %td
+          = course[1]
+
+  %table
+    %tr
+      %td
+        Semester
+      %td
+        Enrolled
+    - @num_enrolled.each do |semester, enrollments|
+      %tr
+        %td
+          = semester
+        %td
+          = "Number enrolled: #{enrollments.count}"
