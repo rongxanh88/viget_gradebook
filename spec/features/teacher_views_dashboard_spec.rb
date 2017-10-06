@@ -20,7 +20,7 @@ RSpec.feature "Teacher", type: :feature do
     expect(page).to have_content('Spring 2017')
   end
 
-  xscenario "clicks on a course and sees a students and his grades" do
+  scenario "clicks on a course and sees a students and his grades" do
     student = create(:user)
     course = user.courses.first
     sem_course = SemesterCourse.find_by(course_id: course.id)
